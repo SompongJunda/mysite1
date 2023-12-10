@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .button4 {
+        border-radius: 12px;
+        color: white;
+        background-color: rgb(55, 55, 55);
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>JAVASCRIPT</b></a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="index.html" class="w3-bar-item w3-button">index</a>
+          <a href="java.html" class="w3-bar-item w3-button">java</a>
+          <a href="api.html" class="w3-bar-item w3-button">api</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width: 1564px">
+    
+        <!-- Page content -->
+        <div class="w3-content w3-padding" style="max-width: 1564px">
+          <div class="w3-container w3-margin-top w3-padding-64">
+            <h1>JavaScript</h1>
+
+            <hr />
+            <br />
+            <h2>ป้อนตัวเลขเพื่อคูณ</h2>
+
+            <label for="number1">ป้อนตัวเลข 1:</label>
+            <input type="number" id="number1" placeholder="ป้อนหมายเลข" />
+
+            <label for="number2">ป้อนตัวเลข 2:</label>
+            <input type="number" id="number2" placeholder="ป้อนหมายเลขอื่น" />
+
+            <button class="button4" onclick="multiplyNumbers()">คูณ</button>
+
+            <p id="result"></p>
+            <br />
+            <hr />
+            <br />
+            <h2>การแปลงวันเป็นวินาที</h2>
+
+            <label for="days">ใส่จํานวนวัน:</label>
+            <input type="number" id="days" placeholder="ใส่จํานวนวัน" />
+
+            <button class="button4" onclick="convertToSeconds()">
+              แปลงเป็นวินาที
+            </button>
+
+            <p id="result1"></p>
+            <br />
+            <hr />
+            <br />
+            <h2>ค้นหาพื้นที่สี่เหลี่ยมจัตุรัส</h2>
+            <form>
+              <label for="x">แกน X</label>
+              <input id="x" type="number" />
+              <label for="y">แกน Y</label>
+              <input id="y" type="number" />
+              <button class="button4" onclick="square()">คลิก</button>
+            </form>
+
+            <p id="answer"></p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h2>ตรวจสอบเกรด</h2>
+          <label for="point">กรอกคะแนนของคุณ</label>
+          <input type="number" id="point" />
+          <button class="button4" onclick="calculateGrade()">
+            คะแนนของคุณ
+          </button>
+          <p id="overall">F</p>
+          <br />
+          <hr />
+          <br />
+          <h2>อุณหภูมิ</h2>
+              <input type="number" id="fahrenheit" placeholder="ป้อนอุณหภูมิ" fdprocessedid="a2b9c9">
+              <button class="button4" onclick="convert()" fdprocessedid="t6ldndj">คลิก</button>
+             
+              <p id="celsius"></p>
+              <br>
+              <hr>
+              <br>
+          <!-- End page content -->
+        </div>
+
+        <!-- Footer -->
+        
+        <script>
+         function convert() {
+            const fahrenheit = document.getElementById("fahrenheit").value;
+            const celsius = (fahrenheit - 32) / 1.8;
+            document.getElementById("celsius").innerHTML = celsius;
+        }
+          function multiplyNumbers() {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+
+            var result = parseFloat(num1) * parseFloat(num2);
+
+            document.getElementById("result").innerHTML = "ผล: " + result;
+          }
+          function convertToSeconds() {
+            var days = document.getElementById("days").value;
+
+            var seconds = parseFloat(days) * 24 * 60 * 60;
+
+            document.getElementById("result1").innerHTML =
+              days + " วันเท่ากับ " + seconds + " วินาที";
+          }
+          function square() {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+
+            document.getElementById("answer").innerText = x * y;
+          }
+
+          function calculateGrade() {
+            let point = document.getElementById("point").value;
+
+            if (point >= 80) document.getElementById("overall").innerText = "A";
+            else if (point >= 70 && point < 80)
+              document.getElementById("overall").innerText = "B";
+            else if (point >= 60 && point < 70)
+              document.getElementById("overall").innerText = "C";
+            else if (point >= 50 && point < 60)
+              document.getElementById("overall").innerText = "D";
+            else document.getElementById("overall").innerText = "F";
+          }
+          
+          
+        </script>
+        <iframe
+          width="100%"
+          height="400"
+          seamless=""
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRqnTY5eX4_HVmeMGe4iXPTzhbWB47cg1S1jjqjewVWCui8NmevBlaxHDg14nWRSDV9MORlW-V8-WX6/pubchart?oid=1863415153&format=interactive"
+        >
+        </iframe>
+        <br />
+        
+        <hr>
+          <div>
+          <canvas id="myChart" width="800" height="400"></canvas>
+          </div>
+          <div><script src="country-by-population.json"></script></div>
+          </div>
+    
+      
+      <!-- End page content -->
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>const ctx = document.getElementById('myChart');
+  fetch('country-by-population.json') // ตั้งชื่อไฟล์ JSON ของคุณตรงนี้
+  .then(response => response.json())
+  .then(data => createPieChart(data))
+  .catch(error => console.error('Error:', error));
+
+  function createPieChart(data) {
+  const countries = data.map(entry => entry.country);
+  const populations = data.map(entry => entry.population);
+
+  new Chart(ctx, {
+  type: 'bar',
+  data: {
+  labels: countries,
+  datasets: [{
+  data: populations,
+  backgroundColor: [
+  'rgba(255, 99, 132, 0.2)',
+  'rgba(255, 159, 64, 0.2)',
+  'rgba(255, 205, 86, 0.2)',
+  'rgba(75, 192, 192, 0.2)',
+  'rgba(54, 162, 235, 0.2)',
+  // เพิ่มสีตามจำนวนประชากรที่มี
+  ],
+  borderColor: [
+  'rgb(255, 99, 132)',
+  'rgb(255, 159, 64)',
+  'rgb(255, 205, 86)',
+  'rgb(75, 192, 192)',
+  'rgb(54, 162, 235)',
+  // เพิ่มสีตามจำนวนประชากรที่มี
+  ],
+  borderWidth: 1
+  }]
+  },
+  options: {
+  responsive: true,
+  maintainAspectRatio: false
+  }
+  });
+  }
+  </script>
